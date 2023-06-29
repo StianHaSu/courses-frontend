@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Testing from '../views/Testing.vue'
 import NewCourseView from '../views/NewCourseView.vue'
+import CommentScreen from '../views/CommentScreen.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +16,12 @@ const router = createRouter({
       path: '/new',
       name: 'new',
       component: NewCourseView
+    },
+    {
+      path: '/:course/comments',
+      name: 'comments',
+      component: CommentScreen,
+      props: route => ({ code: route.params.course })
     },
     {
       path: '/testing',
