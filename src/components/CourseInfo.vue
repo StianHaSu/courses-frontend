@@ -1,6 +1,6 @@
 <template>
     <div class="courseWrapper">
-        <div class="mx-6 mt-4 flex-col">
+        <div class="mx-6 mt-4 flex-col font-light">
             <div class="text-3xl font-semibold">
                 {{ courseCode }}
             </div>
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="flex justify-center">
-            <div class="flex justify-evenly bottom-5 absolute w-full">
+            <div class="flex justify-evenly bottom-20 absolute w-full">
                 <div>
                     <RatingCircle :score="usefulRating"/>
                 </div>
@@ -24,6 +24,13 @@
                 </div>
                 <div>
                     <RatingCircle :score="presentationRating"/>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <div class=" absolute bottom-5">
+                <div class="mt-8 border border-black shadow-sm shadow-black rounded-lg">
+                    <button @click="$router.push(courseCode+'/comments')" class="w-[200px] mx-2 my-1"><h1>Se kommentarfelt</h1></button>
                 </div>
             </div>
         </div>
