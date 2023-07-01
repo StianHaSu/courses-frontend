@@ -33,6 +33,7 @@
 
 <script lang="ts">
 import axios from 'axios';
+import type Comment from '../model/Comment'
 import CommentBox from '../components/CommentBox.vue';
 import CommentInput from '../components/CommentInput.vue'
 
