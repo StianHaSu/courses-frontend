@@ -16,9 +16,9 @@
             </div>
             <div class="flex justify-center mt-10">
                 <div class="flex-col space-y-2">
-                    <CommentBox v-for="comment in comments" :key="comment.id"
-                        :commenter="comment.commenter"
-                        :content="comment.content"
+                    <CommentBox v-for="comment in comments" :key="Number(comment.id)"
+                        :commenter="comment.commenter.toString()"
+                        :content="comment.content.toString()"
                     />
                 </div>
             </div>
@@ -33,10 +33,9 @@
 
 <script lang="ts">
 import axios from 'axios';
-import type Comment from '../model/Comment'
+import type { Comment } from '../model/Comment'
 import CommentBox from '../components/CommentBox.vue';
 import CommentInput from '../components/CommentInput.vue'
-
 
 export default {
     props: {
